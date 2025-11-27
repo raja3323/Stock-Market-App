@@ -29,9 +29,6 @@ app.use('/api/auth', authRoutes);
 io.on("connection", (socket)=>{
    console.log('Client Connected: ', socket.id);
 
-   socket.on("sendMessage", (data) => {
-      io.emit("receiveMessage", data);
-   });
 
    socket.on("disconnect", () => {
       console.log("Client disconnected:", socket.id);
@@ -41,5 +38,3 @@ io.on("connection", (socket)=>{
 httpServer.listen(PORT, ()=>{
    console.log(`http://localhost:${PORT}`)
 })
-
-// I do have some doubts in Socket.io 

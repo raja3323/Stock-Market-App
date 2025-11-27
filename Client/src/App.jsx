@@ -10,10 +10,6 @@ function App() {
          console.log("Connected to socket:", socket.id);
       });
 
-      socket.on("disconnect", () => {
-         console.log("Disconnected from socket");
-      });
-
       return () => {
          socket.disconnect();
       };
