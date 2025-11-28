@@ -1,5 +1,3 @@
-
-
 import axios from 'axios';
 
 export function signup({name, email, password}){

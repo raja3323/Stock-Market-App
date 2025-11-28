@@ -20,5 +20,3 @@ export async function requireAuth(req, res, next){
         return res.status(401).json({error: "Unauthorized"})
      }
 }
-
-// I have doubts with this part, which is related to bearer token and req.headers.Authorization

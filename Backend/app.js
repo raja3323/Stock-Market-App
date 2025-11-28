@@ -1,8 +1,10 @@
 import express from "express";
 import authRoutes from "./http/routers/auth.route.js";
+import userRoutes from './http/routers/user.route.js'
 import { createServer } from "http";
 import { Server } from "socket.io";
 import cors from "cors";
+import { requireAuth } from "./http/middlewares/requireAuth.js";
 const app = express();
 const PORT = 4444;
 
@@ -24,6 +26,8 @@ const io = new Server(httpServer, {
 
 // Routes - For handling HTTP request
 app.use("/api/auth", authRoutes);
+// app.use('/home', requireAuth, userRoutes) // Some changes needed to enable this route.
+
 
 let stocksEmittinData = new Map();
 
