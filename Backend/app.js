@@ -26,7 +26,7 @@ const io = new Server(httpServer, {
 
 // Routes - For handling HTTP request
 app.use("/api/auth", authRoutes);
-// app.use('/home', requireAuth, userRoutes) // Some changes needed to enable this route.
+app.use('/home', userRoutes) // Some changes needed to enable this route.
 
 
 let stocksEmittinData = new Map();
